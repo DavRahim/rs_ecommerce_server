@@ -22,7 +22,7 @@ const corsOptions = {
 //step- 4
 const io = socket(server, {
   cors: {
-    origin: process.env.MODE === "pro" ? [process.env.client_production_url] : ["http://localhost:5173", "http://localhost:5174"],
+    origin: "*",
     credentials: true,
   },
 });

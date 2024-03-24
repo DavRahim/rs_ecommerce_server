@@ -14,16 +14,16 @@ const socket = require("socket.io");
 const server = http.createServer(app);
 
 // middleware
-// const corsOptions = {
-//   origin: process.env.MODE === "pro" ? [process.env.client_production_url] : ["http://localhost:5173", "http://localhost:5174"],
-//   credentials: true,
-//   optionSuccessStatus: 200,
-// };
 const corsOptions = {
-  origin: "*",
+  origin: process.env.MODE === "pro" ? ["https://rs-ecommerce-five.vercel.app/"]: ["http://localhost:5173", "http://localhost:5174"],
   credentials: true,
   optionSuccessStatus: 200,
 };
+// const corsOptions = {
+//   origin: "*",
+//   credentials: true,
+//   optionSuccessStatus: 200,
+// };
 //step- 4
 const io = socket(server, {
   cors: {

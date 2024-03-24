@@ -14,8 +14,13 @@ const socket = require("socket.io");
 const server = http.createServer(app);
 
 // middleware
+// const corsOptions = {
+//   origin: process.env.MODE === "pro" ? [process.env.client_production_url] : ["http://localhost:5173", "http://localhost:5174"],
+//   credentials: true,
+//   optionSuccessStatus: 200,
+// };
 const corsOptions = {
-  origin: process.env.MODE === "pro" ? [process.env.client_production_url] : ["http://localhost:5173", "http://localhost:5174"],
+  origin: "*",
   credentials: true,
   optionSuccessStatus: 200,
 };

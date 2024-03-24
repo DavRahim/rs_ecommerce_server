@@ -15,14 +15,14 @@ const server = http.createServer(app);
 
 // middleware
 const corsOptions = {
-  origin: process.env.MODE=== "pro" ? [process.env.client_production_url] : ["http://localhost:5173", "http://localhost:5174"],
+  origin: process.env.MODE === "pro" ? [process.env.client_production_url] : ["http://localhost:5173", "http://localhost:5174"],
   credentials: true,
   optionSuccessStatus: 200,
 };
 //step- 4
 const io = socket(server, {
   cors: {
-    origin: process.env.MODE=== "pro" ? [process.env.client_production_url] : ["http://localhost:5173", "http://localhost:5174"],
+    origin: process.env.MODE === "pro" ? [process.env.client_production_url] : ["http://localhost:5173", "http://localhost:5174"],
     credentials: true,
   },
 });

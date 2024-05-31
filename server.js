@@ -15,7 +15,7 @@ const server = http.createServer(app);
 
 // middleware
 const corsOptions = {
-  origin: process.env.MODE === "pro" ? "https://rs-ecommerce-five.vercel.app" : ["http://localhost:5173", "http://localhost:5174"],
+  origin: process.env.MODE === "pro" ? ["https://rs-ecommerce-five.vercel.app", "http://localhost:5173", "https://rs-ecommerce-dashborad.vercel.app"] : ["http://localhost:5173", "http://localhost:5174"],
   credentials: true,
   optionSuccessStatus: 200,
 };
